@@ -25,7 +25,7 @@ class FileUploadController extends Controller
     public function fileUploadPost(Request $request)
     {
         $request->validate([
-            'file' => 'required|mimes:txt|max:20480',
+            'file' => 'required|mimes:txt|max:20481',
         ]);
   
         $fileName = time().'.'.$request->file->extension();  
