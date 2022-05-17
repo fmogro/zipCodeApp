@@ -18,21 +18,23 @@ class ZipCodeController extends Controller{
 
         try{
             $data = ZipCode::where("d_codigo",$zip_code)->firstOrFail();
+
             
             if($data){
-                $d_estado = mb_strtoupper($this->eliminarAcentos(html_entity_decode($data->d_estado)));
+                $infoC = $data->first();
+                $d_estado = mb_strtoupper($this->eliminarAcentos(html_entity_decode($infoC->d_estado)));
                 $federal_entity = new \stdClass();
-                $federal_entity->key  = intval(html_entity_decode($data->c_estado));
-                $federal_entity->name =  mb_strtoupper($this->eliminarAcentos(html_entity_decode($data->d_estado)));
-                if ($data->c_cp===""){
-                    $data->c_cp=null;
+                $federal_entity->key  = intval(html_entity_decode($infoC->c_estado));
+                $federal_entity->name =  mb_strtoupper($this->eliminarAcentos(html_entity_decode($infoC->d_estado)));
+                if ($infoC->c_cp===""){
+                    $infoC->c_cp=null;
                 }
-                $federal_entity->code = $data->c_cp;
+                $federal_entity->code = $infoC->c_cp;
     
                 $municipality = new \stdClass();
-                $municipality->key  = intval($this->eliminarAcentos(html_entity_decode($data->c_mnpio)));
+                $municipality->key  = intval($this->eliminarAcentos(html_entity_decode($infoC->c_mnpio)));
     
-                $d_mnpio = mb_strtoupper($this->eliminarAcentos(html_entity_decode($data->d_mnpio)));
+                $d_mnpio = mb_strtoupper($this->eliminarAcentos(html_entity_decode($infoC->d_mnpio)));
                 $municipality->name = ($this->eliminarAcentos(html_entity_decode($d_mnpio)));
                
                 $settlements = collect();
