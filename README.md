@@ -1,5 +1,26 @@
 
 # Api Rest Simple de Correos de México✉️
+Para la creación de campos en la tabla, se utilizó lo que nos provee el sitio web
+https://www.correosdemexico.gob.mx/SSLServicios/ConsultaCP/imagenes/Descrip.pdf
+
+  
+
+## Implementación 🔥
+La implementación es sencilla utilizando Laravel 8 como Backend
+En primer lugar, se debe clonar el repositorio y hacer:
+
+Inicialmente crear el archivo .ENV y configurar credenciales de bases de datos y base de datos
+    cp .env.example .env
+
+Luego: 
+        
+    php artisan key:generate
+        
+    composer install 
+    
+    php artisan migrate
+
+
 Esta Api se alimenta de un archivo txt obtenido de aquí.
 
 https://www.correosdemexico.gob.mx/SSLServicios/ConsultaCP/CodigoPostal_Exportar.aspx 
@@ -11,24 +32,14 @@ El archivo de texto se debe agregar a la carpeta
 Utilizando el nombre 
 
     CPdescarga.txt
-Se debe editar el archivo import.php donde para colocar credenciales MySQL y nombre de base de datos para realizar la importación del archivo por consola. 
+    
+Se debe editar el archivo import.php donde para colocar credenciales MySQL y nombre de base de datos para realizar la importación del archivo por consola. (Se esta desarrollando un dashboard, para importarlo por dashboard, Update Soon)
 
 Luego ejecutar.
 
     php importar.php
 
 Y listo, los datos se deberían haber importado de manera exitosa.
-
-Para la creación de campos en la tabla, se utilizó lo que nos provee el sitio web
-https://www.correosdemexico.gob.mx/SSLServicios/ConsultaCP/imagenes/Descrip.pdf
-
-  
-
-## Implementación 🔥
-La implementación es sencilla utilizando Laravel 8 como Backend
-En primer lugar, se debe clonar el repositorio y hacer:
-
-    composer install
 
   Luego, una vez finalizado, ejecutar.
   
@@ -42,17 +53,17 @@ Y listo, se deberia estar ejecutando, si se ejecuta por defecto estaría en el p
 Y la respuesta debería ser
 
     {
-	    "zip_code": "1000",
-	    "locality": "CIUDAD DE MÉXICO",
+	    "zip_code": "01000",
+	    "locality": "CIUDAD DE MEXICO",
 	    "federal_entity": {
 		    "key": 9,
-		    "name": "CIUDAD DE MÉXICO",
+		    "name": "CIUDAD DE MEXICO",
 		    "code": null
 		 },
 		 "settlements": [
 			 {
 				 "key": 213,
-				 "name": "SANTA LUCÍA",
+				 "name": "SANTA LUCIA",
 				 "zone_type": "URBANO",
 					 "settlement_type": {
 					 "name": "Pueblo"
@@ -61,6 +72,6 @@ Y la respuesta debería ser
 		   ],
 			"municipality": {
 				"key": 10,
-				"name": "ÁLVARO OBREGÓN"
+				"name": "ALVARO OBREGON"
 			}
 	}
