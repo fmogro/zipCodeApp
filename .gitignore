@@ -13,4 +13,4 @@ npm-debug.log
 yarn-error.log
 /.idea
 /.vscode
-#/resources/scripts/import.php
+/resources/scripts/import.php
