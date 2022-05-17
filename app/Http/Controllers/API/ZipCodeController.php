@@ -84,4 +84,9 @@ class ZipCodeController extends Controller{
         $nuevaCadena = preg_replace($replace, $remplazo, $texto);
         return $nuevaCadena;
     }
+
+    public function show(){
+        $data = ZipCode::paginate(50);
+        return view('ziplist',compact('data'));    
+    }
 }
