@@ -22,7 +22,7 @@ class ZipCodeController extends Controller{
             if($data){
                 $d_estado = mb_strtoupper($this->eliminarAcentos(html_entity_decode($data->d_estado)));
                 $federal_entity = new \stdClass();
-                $federal_entity->key  = (html_entity_decode($data->c_estado));
+                $federal_entity->key  = intval(html_entity_decode($data->c_estado));
                 $federal_entity->name =  mb_strtoupper($this->eliminarAcentos(html_entity_decode($data->d_estado)));
                 if ($data->c_cp===""){
                     $data->c_cp=null;
@@ -30,7 +30,7 @@ class ZipCodeController extends Controller{
                 $federal_entity->code = $data->c_cp;
     
                 $municipality = new \stdClass();
-                $municipality->key  = ($this->eliminarAcentos(html_entity_decode($data->c_mnpio)));
+                $municipality->key  = intval($this->eliminarAcentos(html_entity_decode($data->c_mnpio)));
     
                 $d_mnpio = mb_strtoupper($this->eliminarAcentos(html_entity_decode($data->d_mnpio)));
                 $municipality->name = ($this->eliminarAcentos(html_entity_decode($d_mnpio)));
@@ -44,7 +44,7 @@ class ZipCodeController extends Controller{
                 $d_asenta = mb_strtoupper($this->eliminarAcentos(html_entity_decode($data->d_asenta)));
     
                 $settle = new \stdClass();
-                $settle->key                = (html_entity_decode($data->id_asenta_cpcons));
+                $settle->key                = intval(html_entity_decode($data->id_asenta_cpcons));
                 $settle->name               = $d_asenta;
                 $settle->zone_type          = mb_strtoupper($this->eliminarAcentos($data->d_zona));
                 $settle->settlement_type    = $settlement_type;
@@ -52,9 +52,7 @@ class ZipCodeController extends Controller{
                 
                 $result = new \stdClass();
 
-                if (strlen($data->d_codigo)<5){
-                  $data->d_codigo = "0".$data->d_codigo;
-                }
+               
   
                 $result->zip_code = ($data->d_codigo);
           
