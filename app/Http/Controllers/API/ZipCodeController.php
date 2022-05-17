@@ -25,9 +25,7 @@ class ZipCodeController extends Controller{
                 $federal_entity = new \stdClass();
                 $federal_entity->key  = intval(html_entity_decode($data->c_estado));
                 $federal_entity->name =  mb_strtoupper($this->eliminarAcentos(html_entity_decode($data->d_estado)));
-                if ($data->c_cp===""){
-                    $data->c_cp=null;
-                }
+
                 $federal_entity->code = $data->c_cp;
     
                 $municipality = new \stdClass();
@@ -53,10 +51,7 @@ class ZipCodeController extends Controller{
                 
                 $result = new \stdClass();
 
-                if (strlen($data->d_codigo)<5){
-                  $data->d_codigo = "0".$data->d_codigo;
-                }
-  
+         
                 $result->zip_code = strval($data->d_codigo);
           
     
