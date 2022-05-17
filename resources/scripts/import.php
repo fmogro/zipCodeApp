@@ -11,10 +11,6 @@ if ($handle) {
             $password = "";
             $conn = mysqli_connect($servername, $username, $password, $database);
 
-
-           $text=mb_convert_encoding($arrZip['4'],'UTF-8','ISO-8859-15');
-         
-            
             if (!$conn) {
                 die("Connection failed: " . mysqli_connect_error());
             }

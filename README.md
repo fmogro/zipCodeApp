@@ -77,3 +77,5 @@ Y la respuesta debería ser
 	}
 
 Ademas se creo un dashboard para subir los codigos postales desde ahi, esta en la ruta /login (hay que registrarse)
+
+NOTA: Archivo TXT viene en codificación ISO-8859-15 y daba problemas para importar con las tildes asi que se las hace htmlentities

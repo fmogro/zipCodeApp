@@ -50,10 +50,10 @@ class FileUploadController extends Controller
                 $arrZip = explode('|',$line);
                 if (is_numeric($arrZip['0'])){
                     foreach ($arrZip as $key =>$arrZ){
-                            $arrZipNew[$key] =  htmlentities($arrZ);
+                            $arrZipNew[$key] =  htmlentities(mb_convert_encoding($arrZ,'UTF-8','ISO-8859-15'));
                             $arrZipNew[$key] = trim(preg_replace("[\n|\r|\n\r]", "",$arrZipNew[$key]));
                     }
-                
+                    
                     $d_codigo = $arrZipNew[0];
                     $d_asenta = $arrZipNew[1];
                     $d_tipo_asenta = $arrZipNew[2];
