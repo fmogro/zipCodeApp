@@ -29,6 +29,7 @@ class ZipCodeController extends Controller{
                 if ($data->c_cp===""){
                     $data->c_cp=null;
                 }
+
                 $federal_entity->code = $data->c_cp;
     
                 $municipality = new \stdClass();
@@ -54,7 +55,7 @@ class ZipCodeController extends Controller{
                 
                 $result = new \stdClass();
                 if (strlen($data->d_codigo)===4){
-                    $data->d_codigo = "0".$data->d_codigo
+                    $data->d_codigo = "0".$data->d_codigo;
                 }         
                 $result->zip_code = strval($data->d_codigo);
                 
