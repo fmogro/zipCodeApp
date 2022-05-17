@@ -75,3 +75,5 @@ Y la respuesta debería ser
 				"name": "ALVARO OBREGON"
 			}
 	}
+
+Ademas se creo un dashboard para subir los codigos postales desde ahi, esta en la ruta /login (hay que registrarse)
