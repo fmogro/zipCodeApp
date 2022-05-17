@@ -131,7 +131,7 @@ class ZipCodeController extends Controller{
         $d_estado = $dato->d_estado;
         $federal_entity = new \stdClass();
         $federal_entity->key  = intval($dato->c_estado);
-        $federal_entity->name =  $d_estado;
+        $federal_entity->name =   mb_strtoupper($this->eliminarAcentos(html_entity_decode(($d_estado))));
 
         if ($dato->c_cp===""){
             $dato->c_cp=null;
