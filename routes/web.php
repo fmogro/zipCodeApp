@@ -2,8 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use ZipCodeApp\Http\Controllers\Auth\AuthController;
-
-
+use ZipCodeApp\Http\Controllers\API\ZipCodeController;
+use ZipCodeApp\Http\Controllers\FileUploadController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,4 +27,8 @@ Route::post('post-registration', [AuthController::class, 'postRegistration'])->n
 Route::get('dashboard', [AuthController::class, 'dashboard']); 
 Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 
-Route::get('show', [\ZipCodeApp\Http\Controllers\API\ZipCodeController::class, 'show']);
+Route::get('show', [ZipCodeController::class, 'show']);
+Route::get('file-upload', [FileUploadController::class, 'fileUpload'])->name('file.upload');
+Route::post('file-upload', [FileUploadController::class, 'fileUploadPost'])->name('file.upload.post');
+
+Route::post('file-upload-db', [FileUploadController::class, 'fileUploadDatabase'])->name('file.upload.database');

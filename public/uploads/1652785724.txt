@@ -1,0 +1,27 @@
+99593|San Antonio de la Calera (La Calera)|Pueblo|El Plateado de Joaquín Amaro|Zacatecas||99541|32|99541||28|015|0667|Rural|
+99600|Jalpa Centro|Colonia|Jalpa|Zacatecas|Jalpa|99601|32|99601||09|019|0668|Urbano|17
+99600|Sagrado Corazón|Barrio|Jalpa|Zacatecas|Jalpa|99601|32|99601||02|019|1285|Urbano|17
+99600|El Rosario|Colonia|Jalpa|Zacatecas|Jalpa|99601|32|99601||09|019|1286|Urbano|17
+99602|Mesa del Santo|Colonia|Jalpa|Zacatecas|Jalpa|99601|32|99601||09|019|0008|Urbano|17
+99602|Lindavista|Fraccionamiento|Jalpa|Zacatecas|Jalpa|99601|32|99601||21|019|1057|Urbano|17
+99603|Juárez|Colonia|Jalpa|Zacatecas|Jalpa|99601|32|99601||09|019|0005|Urbano|17
+99603|San Antonio|Colonia|Jalpa|Zacatecas|Jalpa|99601|32|99601||09|019|0010|Urbano|17
+99603|Parque La Mezquitera|Colonia|Jalpa|Zacatecas|Jalpa|99601|32|99601||09|019|1058|Urbano|17
+99603|De La Cruz|Barrio|Jalpa|Zacatecas|Jalpa|99601|32|99601||02|019|1071|Urbano|17
+99605|Del Sol|Fraccionamiento|Jalpa|Zacatecas|Jalpa|99601|32|99601||21|019|0001|Urbano|17
+99605|SARH|Colonia|Jalpa|Zacatecas|Jalpa|99601|32|99601||09|019|0015|Urbano|17
+99606|Del Carmen|Colonia|Jalpa|Zacatecas|Jalpa|99601|32|99601||09|019|0003|Urbano|17
+99606|Quinta Chilla|Fraccionamiento|Jalpa|Zacatecas|Jalpa|99601|32|99601||21|019|0009|Urbano|17
+99606|Tia Rita|Fraccionamiento|Jalpa|Zacatecas|Jalpa|99601|32|99601||21|019|0011|Urbano|17
+99606|José María Morelos (Arroyo de la Troje)|Colonia|Jalpa|Zacatecas|Jalpa|99601|32|99601||09|019|0025|Urbano|17
+99606|Jacarandas|Fraccionamiento|Jalpa|Zacatecas|Jalpa|99601|32|99601||21|019|1065|Urbano|17
+99606|Hidalgo|Colonia|Jalpa|Zacatecas|Jalpa|99601|32|99601||09|019|1067|Urbano|17
+99607|Arroyo Blanco|Colonia|Jalpa|Zacatecas|Jalpa|99601|32|99601||09|019|0002|Urbano|17
+99607|Reforma|Fraccionamiento|Jalpa|Zacatecas|Jalpa|99601|32|99601||21|019|1064|Urbano|17
+99607|Caxcán|Colonia|Jalpa|Zacatecas|Jalpa|99601|32|99601||09|019|1717|Urbano|17
+99608|Lomas del Valle|Fraccionamiento|Jalpa|Zacatecas|Jalpa|99601|32|99601||21|019|1060|Urbano|17
+99608|Revolución|Fraccionamiento|Jalpa|Zacatecas|Jalpa|99601|32|99601||21|019|1061|Urbano|17
+99608|FOVISSSTE|Colonia|Jalpa|Zacatecas|Jalpa|99601|32|99601||09|019|1062|Urbano|17
+99608|Loma Arroyo Blanco|Colonia|Jalpa|Zacatecas|Jalpa|99601|32|99601||09|019|1063|Urbano|17
+99608|Morelos|Colonia|Jalpa|Zacatecas|Jalpa|99601|32|99601||09|019|1066|Urbano|17
+99609|Jardines de San José|Colonia|Jalpa|Zacatecas|Jalpa|99601|32|99601||09|019|0004|Urbano|17

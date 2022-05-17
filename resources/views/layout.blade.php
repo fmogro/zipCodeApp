@@ -74,7 +74,7 @@
                         <a class="nav-link" href="/show">Ver Registros 👀</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Subir Información 🧠</a>
+                        <a class="nav-link" href="/file-upload">Subir Información 🧠</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('logout') }}">Cerrar Sesion</a>
