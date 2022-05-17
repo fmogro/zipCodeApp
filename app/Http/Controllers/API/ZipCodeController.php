@@ -112,7 +112,7 @@ class ZipCodeController extends Controller{
             $settlement_type = new \stdClass();
             $settlement_type->name = $line->d_tipo_asenta;
 
-            $d_asenta = mb_strtoupper($this->eliminarAcentos($line->d_asenta));
+            $d_asenta = mb_strtoupper($this->eliminarAcentos(html_entity_decode($line->d_asenta)));
 
             $settle = new \stdClass();
             $settle->key                = intval(html_entity_decode($line->id_asenta_cpcons));
