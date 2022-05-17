@@ -5,7 +5,7 @@ namespace ZipCodeApp\Http\Controllers\API;
 use ZipCodeApp\Http\Controllers\Controller;
 use ZipCodeApp\Models\ZipCode;
 use Illuminate\Http\Request;
-use Illuminate\Database\Eloquent\ModelNotFoundException;
+
 
 
 class ZipCodeController extends Controller{
@@ -16,8 +16,9 @@ class ZipCodeController extends Controller{
 
     public function obtenerZipCode($zip_code){
 
-        try{
+
            $data = ZipCode::where("d_codigo",$zip_code)->get();
+
 
             if(isset($data)){
       
@@ -48,10 +49,7 @@ class ZipCodeController extends Controller{
                return response()->json($resultados);
             }
             return response()->json($dato);
-        }
-        catch(ModelNotFoundException $e){
-            return response()->json(['message' => 'Not Found!'], 404);
-        }
+        
 
     }
 
@@ -112,7 +110,7 @@ class ZipCodeController extends Controller{
             $settlement_type = new \stdClass();
             $settlement_type->name = $line->d_tipo_asenta;
 
-            $d_asenta = mb_strtoupper($this->eliminarAcentos(html_entity_decode($line->d_asenta)));
+            $d_asenta = mb_strtoupper($this->eliminarAcentos(html_entity_decode($line->d_asenta))   );
 
             $settle = new \stdClass();
             $settle->key                = intval(html_entity_decode($line->id_asenta_cpcons));
@@ -130,7 +128,7 @@ class ZipCodeController extends Controller{
      * Funcion Federal Entity
      */
     public function federalEntity($dato){
-        $d_estado = mb_strtoupper($this->eliminarAcentos(html_entity_decode($dato->d_estado)));
+        $d_estado = $dato->d_estado;
         $federal_entity = new \stdClass();
         $federal_entity->key  = intval($dato->c_estado);
         $federal_entity->name =  $d_estado;
