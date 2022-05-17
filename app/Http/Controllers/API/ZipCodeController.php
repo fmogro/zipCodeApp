@@ -5,11 +5,20 @@ namespace ZipCodeApp\Http\Controllers\API;
 use ZipCodeApp\Http\Controllers\Controller;
 use ZipCodeApp\Models\ZipCode;
 use Illuminate\Http\Request;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+
 
 class ZipCodeController extends Controller{
 
+    /**
+     * Recive zipcode from route
+     */
+
     public function obtenerZipCode($zip_code){
-        $data = ZipCode::where("d_codigo",$zip_code)->firstOrFail();
+
+        try{
+            $data = ZipCode::where("d_codigo",$zip_code)->firstOrFail();
+            
             if($data){
                 $d_estado = mb_strtoupper($this->eliminarAcentos(html_entity_decode($data->d_estado)));
                 $federal_entity = new \stdClass();
@@ -61,6 +70,12 @@ class ZipCodeController extends Controller{
                return response()->json($result);
             }
         return response()->json($data);
+        }
+        catch(ModelNotFoundException $e)
+        {
+            return response()->json(['message' => 'Not Found!'], 404);
+        }
+
     }
 
     public function eliminarAcentos($texto){
