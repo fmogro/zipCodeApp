@@ -11,22 +11,19 @@ class ZipCodeController extends Controller{
     public function obtenerZipCode($zip_code){
         $data = ZipCode::where("d_codigo",$zip_code)->firstOrFail();
             if($data){
-
-                $info = $data->first();
-    
-                $d_estado = mb_strtoupper((html_entity_decode($info->d_estado)));
+                $d_estado = mb_strtoupper((html_entity_decode($data->d_estado)));
                 $federal_entity = new \stdClass();
-                $federal_entity->key  = intval(html_entity_decode($info->c_estado));
-                $federal_entity->name =  mb_strtoupper(html_entity_decode($info->d_estado));
-                if ($info->c_cp===""){
-                    $info->c_cp=null;
+                $federal_entity->key  = intval(html_entity_decode($data->c_estado));
+                $federal_entity->name =  mb_strtoupper(html_entity_decode($data->d_estado));
+                if ($data->c_cp===""){
+                    $data->c_cp=null;
                 }
-                $federal_entity->code = $info->c_cp;
+                $federal_entity->code = $data->c_cp;
     
                 $municipality = new \stdClass();
-                $municipality->key  = intval(html_entity_decode($info->c_mnpio));
+                $municipality->key  = intval(html_entity_decode($data->c_mnpio));
     
-                $d_mnpio = mb_strtoupper( html_entity_decode($info->d_mnpio));
+                $d_mnpio = mb_strtoupper( html_entity_decode($data->d_mnpio));
                 $municipality->name = html_entity_decode($d_mnpio);
     
                 $settlements = collect();
@@ -45,9 +42,15 @@ class ZipCodeController extends Controller{
                 $settlements->push($settle);
                 
                 $result = new \stdClass();
-                $result->zip_code = strval($info->d_codigo);
+
+                if (strlen($data->d_codigo)<5){
+                  $data->d_codigo = "0".$data->d_codigo;
+                }
+  
+                $result->zip_code = strval($data->d_codigo);
+          
     
-                $locality = mb_strtoupper(html_entity_decode($info->d_ciudad));
+                $locality = mb_strtoupper(html_entity_decode($data->d_ciudad));
     
                 $result->locality       = $locality;
                 $result->federal_entity = $federal_entity;
